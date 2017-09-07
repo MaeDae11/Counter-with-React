@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-
-
+import CounterButton from './CounterButton.js';
 
 
 
@@ -9,26 +8,30 @@ import React, {Component} from 'react';
 class Number extends Component {
     constructor(props){
         super(props);
-    
         this.state = { totalClicks: 0};
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickPositive = this.handleClickPositive.bind(this);
+        this.handleClickNegative = this.handleClickNegative.bind(this);
     }
-    handleClick() {
+    handleClickPositive = () => {
         const total = this.state.totalClicks;
-
         this.setState(
             {totalClicks: total + 1}
         );
     }
-
-    numberIncreaser = (num) => {
-        return num++
+    handleClickNegative = () => {
+        const total = this.state.totalClicks;
+        this.setState(
+            {totalClicks: total - 1}
+        );
     }
+    
 
     render(){
         return(
-            <div className="Number">
-                <h1>{numberIncreaser}</h1>
+            <div>
+                <h1>Number is: {this.state.totalClicks}</h1>
+                <CounterButton onClick={this.handleClickPositive} />
+                <CounterButton onClick={this.handleClickNegative} />
             </div>
         )
     }

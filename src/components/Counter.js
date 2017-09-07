@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
+import Number from './Number.js';
 import CounterButton from './CounterButton.js';
 
 
-
-
-
-class Number extends Component {
+class Counter extends Component {
     constructor(props){
         super(props);
-        this.state = { totalClicks: 0};
+        this.state = {totalClicks : 0}
         this.handleClickPositive = this.handleClickPositive.bind(this);
         this.handleClickNegative = this.handleClickNegative.bind(this);
     }
@@ -25,15 +24,14 @@ class Number extends Component {
         );
     }
     render(){
-        return(
+        return (
             <div>
-                <h1>Number is: {this.state.totalClicks}</h1>
-                <CounterButton onClick={this.handleClickPositive} name={'Add Number'} />
-                <CounterButton onClick={this.handleClickNegative} name={'Subtract Number'} />
+                <CounterButton onClick={this.handleClickPositive} name={'Add Counter'}/>
+                <CounterButton onClick={this.handleClickNegative} name={'Subtract Counter'}/>
+                <Number />
             </div>
         )
     }
 }
 
-
-export default Number;
+export default Counter;

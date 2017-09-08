@@ -7,28 +7,33 @@ import CounterButton from './CounterButton.js';
 class Counter extends Component {
     constructor(props){
         super(props);
-        this.state = {totalClicks : 0}
-        this.handleClickPositive = this.handleClickPositive.bind(this);
-        this.handleClickNegative = this.handleClickNegative.bind(this);
+        this.state = {totalCounters : 1}
     }
-    handleClickPositive = () => {
-        const total = this.state.totalClicks;
+    handleAddCounter = () => {
+        const total = this.state.totalCounters;
         this.setState(
-            {totalClicks: total + 1}
+            {totalCounters: total + 1}
         );
     }
-    handleClickNegative = () => {
-        const total = this.state.totalClicks;
+    handleSubtractCounter = () => {
+        const total = this.state.totalCounters;
         this.setState(
-            {totalClicks: total - 1}
+            {totalCounters: total - 1}
         );
     }
+
     render(){
+        
+        let counter = []
+        for(let i=0; i < this.state.totalCounters; i++){
+            counter.push(<Number />)
+        }
+
         return (
             <div>
-                <CounterButton onClick={this.handleClickPositive} name={'Add Counter'}/>
-                <CounterButton onClick={this.handleClickNegative} name={'Subtract Counter'}/>
-                <Number />
+                <CounterButton onClick={this.handleAddCounter} name={'Add Counter'}/>
+                <CounterButton onClick={this.handleSubtractCounter} name={'Subtract Counter'}/>
+                {counter}
             </div>
         )
     }

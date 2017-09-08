@@ -8,23 +8,6 @@ import CounterButton from './components/CounterButton.js';
 class App extends Component {
 
 
-
-
-    handleClickPositive = () => {
-        const total = this.state.totalClicks;
-        this.setState(
-            {totalClicks: total + 1}
-        );
-    }
-    handleClickNegative = () => {
-        const total = this.state.totalClicks;
-        this.setState(
-            {totalClicks: total - 1}
-        );
-    }
-
-
-
   render() {
     return (
       <div className="App">

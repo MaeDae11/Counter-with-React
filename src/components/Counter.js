@@ -7,7 +7,7 @@ import CounterButton from './CounterButton.js';
 class Counter extends Component {
     constructor(props){
         super(props);
-        this.state = {totalCounters : 1}
+        this.state = {totalCounters : 0}
     }
     handleAddCounter = () => {
         const total = this.state.totalCounters;
@@ -26,7 +26,7 @@ class Counter extends Component {
         
         let counter = []
         for(let i=0; i < this.state.totalCounters; i++){
-            counter.push(<Number />)
+            counter.push(<Number className={i}/>)
         }
 
         return (

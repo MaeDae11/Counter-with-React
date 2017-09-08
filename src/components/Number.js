@@ -25,7 +25,7 @@ class Number extends Component {
     render(){
         return(
             <div>
-                <h1>Number is: {this.state.totalClicks}</h1>
+                <h1 className={this.props.className}>Number is: {this.state.totalClicks}</h1>
                 <CounterButton onClick={this.handleClickPositive} name={'Add Number'} />
                 <CounterButton onClick={this.handleClickNegative} name={'Subtract Number'} />
             </div>

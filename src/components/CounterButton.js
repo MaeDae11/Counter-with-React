@@ -5,7 +5,7 @@ class CounterButton extends Component {
 
     render(){
         return(
-            <button onClick={this.props.onClick}>
+            <button className="button" onClick={this.props.onClick}>
                 {this.props.name}!
             </button>
         )

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  max-width: 1024px; 
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -16,6 +18,20 @@
 
 .App-intro {
   font-size: large;
+}
+.button {
+    padding: 10px;
+    border-radius: 5px;
+    background: none;
+    margin: 10px;
+}
+.counter-buttons {
+    margin: 0 auto;
+    padding: 30px;
+}
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @keyframes App-logo-spin {

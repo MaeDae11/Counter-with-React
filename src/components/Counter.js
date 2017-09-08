@@ -31,9 +31,13 @@ class Counter extends Component {
 
         return (
             <div>
-                <CounterButton onClick={this.handleAddCounter} name={'Add Counter'}/>
-                <CounterButton onClick={this.handleSubtractCounter} name={'Subtract Counter'}/>
-                {counter}
+                <div className="counter-buttons">
+                    <CounterButton onClick={this.handleAddCounter} name={'Add Counter'}/>
+                    <CounterButton onClick={this.handleSubtractCounter} name={'Subtract Counter'}/>
+                </div>
+                <div className="number-container">
+                    {counter}
+                </div>
             </div>
         )
     }
